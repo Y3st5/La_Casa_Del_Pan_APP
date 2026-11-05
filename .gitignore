@@ -1,0 +1,61 @@
+# ------------------------------------------------------------
+#  .gitignore — LaCasaDelPanApp (Python)
+# ------------------------------------------------------------
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Bytecode / caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Empaquetado / distribución
+build/
+dist/
+*.egg-info/
+.eggs/
+*.spec
+# El spec del piloto sí se versiona (es parte del código de empaquetado).
+!LaCasaDelPanApp.spec
+
+# Pruebas y cobertura
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+nosetests.xml
+
+# Base de datos SQLite (archivos locales generados en runtime)
+*.db
+*.db-wal
+*.db-shm
+
+# Tickets simulados (Fase 1: impresión a .txt en runtime)
+tickets/
+
+# Logs de la aplicación
+logs/
+*.log
+
+# Configuración local con credenciales (NO versionar)
+config/config.ini
+config/*.local.ini
+.env
+
+# Entornos de editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Sistema operativo (Windows)
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/

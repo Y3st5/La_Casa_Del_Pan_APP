@@ -1,0 +1,51 @@
+LA CASA DEL PAN - POS
+Paquete piloto portable (Windows)
+=================================
+
+CÓMO EJECUTAR
+-------------
+1. Descomprime TODA la carpeta (no ejecutes el .exe desde dentro del ZIP).
+2. Ejecuta:  LaCasaDelPanApp.exe
+3. No requiere Python ni instalación. Puedes mover la carpeta a otra PC.
+
+DÓNDE QUEDAN LOS DATOS
+----------------------
+%PROGRAMDATA%\LaCasaDelPanApp\
+    config\config.ini      Configuración del negocio y SUNAT
+    db\lacasadepan.db      Base de datos SQLite
+    logs\pos.log           Diagnóstico (rotativo: 2 MB x 5)
+    tickets\               Tickets internos (.txt)
+    boletas\               Boletas (.txt)
+    facturas\              Facturas (.txt)
+    reportes\              PDFs de Cierre del Día
+    xml\ y cdr\            XML/CDR de SUNAT
+
+Si Windows no permite escribir en ProgramData, la app usa automáticamente
+%LOCALAPPDATA%\LaCasaDelPanApp.
+
+PRIMER ARRANQUE
+---------------
+- Crea config.ini a partir de la plantilla incluida.
+- Crea la base de datos con un catálogo de demostración (23 productos).
+- Si quieres partir del catálogo real: cierra la app y copia tu
+  db\lacasadepan.db a %PROGRAMDATA%\LaCasaDelPanApp\db\ (antes de registrar
+  ventas en el piloto). No borres la carpeta de datos al actualizar.
+
+CONFIGURACIÓN
+-------------
+Edita config\config.ini con la aplicación cerrada: RUC, razón social,
+certificado digital y credenciales SUNAT. Por defecto queda en entorno beta.
+
+DIAGNÓSTICO
+-----------
+Si la app no abre o falla, revisa logs\pos.log. Ahí se registra el arranque,
+la creación de la base, los errores y las excepciones no controladas.
+
+LIMITACIONES DE ESTE PILOTO
+---------------------------
+- Tickets/boletas/facturas se generan como archivos .txt (aún no hay
+  impresión térmica ESC/POS).
+- SUNAT está en beta: los comprobantes NO tienen valor tributario.
+- El .exe no está firmado digitalmente. SmartScreen puede mostrar un aviso:
+  "Más información" > "Ejecutar de todas formas".
+- No incluye instalador ni actualización automática (eso es la Etapa 2).

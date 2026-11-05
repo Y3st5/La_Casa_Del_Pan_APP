@@ -1,0 +1,36 @@
+# ============================================================
+#  LaCasaDelPanApp — Punto de Venta (POS)
+#  Dependencias fijadas (pinned). Python 3.12+ (probado en 3.14)
+#  Instalar:  pip install -r requirements.txt
+# ============================================================
+
+# --- Interfaz gráfica (Tkinter + CustomTkinter) ------------
+customtkinter==6.0.0
+# customtkinter arrastra transitivamente: darkdetect, packaging
+
+# --- Gráficos: logo e iconos generados con Pillow ----------
+Pillow==12.3.0
+qrcode==8.2
+python-barcode==0.16.1
+
+# --- Base de datos (SQLite) --------------------------------
+# Nativa: se usa el módulo sqlite3 de la librería estándar (sin dependencias externas).
+
+# --- Hardware: impresora térmica 80mm (ESC/POS) -----------
+# [all] incluye pyusb (USB), pyserial y pywin32 (spooler Windows)
+python-escpos[all]==3.1
+pywin32==312
+
+# --- Seguridad ---------------------------------------------
+argon2-cffi==25.1.0
+
+# --- Reportes PDF (cierre de día) --------------------------
+fpdf2==2.8.9
+openpyxl==3.1.5
+
+# ============================================================
+#  Desarrollo y empaquetado (opcional en la PC de caja)
+# ============================================================
+pytest==9.1.1
+pytest-cov==7.1.0
+pyinstaller==6.22.3
